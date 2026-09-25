@@ -3,628 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Myntra - India's biggest fashion destination. Shop for men, women, kids clothing, footwear, accessories & more.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Myntra - Online Fashion Shopping</title>
 </head>
 <body>
-    <div class="header">
-        <div class="headerleft">
-            <div class="logo">
-                <img src="myntra_logo-removebg-preview.png" alt="image not found" height="50px">
-            </div>
-            <div class="menu">
+
+    <!-- ================= LOADER ================= -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="#" class="logo">
+                <img src="myntra_logo-removebg-preview.png" alt="Myntra Logo" height="50">
+            </a>
+
+            <nav class="menu" id="mainMenu">
                 <ul>
-                    <li><a href="#">MEN</a></li>
-                    <li><a href="#">WOMEN</a></li>
-                    <li><a href="#">KIDS</a></li>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">BEAUTY</a></li>
-                    <li><a href="#">GENZ</a></li>
-                    <li><a href="#">STUDIO</a></li>
+                    <li><a href="#men">MEN</a></li>
+                    <li><a href="#women">WOMEN</a></li>
+                    <li><a href="#kids">KIDS</a></li>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#beauty">BEAUTY</a></li>
+                    <li><a href="#genz">GENZ</a></li>
+                    <li><a href="#studio">STUDIO</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
-        <div class="headerright">
-            <form>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="Text" placeholder="Search for products, brands and more">
+
+        <div class="header-right">
+            <form class="search-form" id="searchForm" autocomplete="off">
+                <button type="submit" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="text" id="searchInput" placeholder="Search for products, brands and more">
+                <div class="search-suggest" id="searchSuggest"></div>
             </form>
-            <div class="profile">
+
+            <nav class="profile">
                 <ul>
-                    <li><i class="fa-regular fa-user"></i><b>profile</b></li>
-                    <li><i class="fa-regular fa-heart"></i><b>wishlist</b></li>
-                    <li><i class="fa-solid fa-bag-shopping"></i><b>bag</b></li>
+                    <li id="profileTrigger">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Profile</span>
+                    </li>
+                    <li id="wishlistTrigger">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>Wishlist</span>
+                        <span class="badge" id="wishlistCount">0</span>
+                    </li>
+                    <li id="bagTrigger">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>Bag</span>
+                        <span class="badge" id="bagCount">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
+    <!-- ================= HERO SWIPER ================= -->
+    <section class="hero-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2026/APRIL/20/J3KzCYBb_c5fd536b78724f8e92960758286ac814.jpg" alt="Banner 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/17/eb6408d8-b413-49f7-8525-317fddba53821650180659351-Casual---Sports-Shoes_Desk.jpg" alt="Banner 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/179e278f-77ee-44c2-bf39-9f00b0cd08e01658752429301-Handbags_Desk.jpg" alt="Banner 3">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <!-- ================= BIGGEST DEALS ================= -->
+    <section class="brandsection reveal">
+        <h2>BIGGEST DEALS ON TOP BRANDS</h2>
+    </section>
+
+    <section class="brand-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/4/71a69cc9-210a-4a95-b37f-78319c8f33761691141606256-image_png2064277310.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/ccebd3fc-3628-4eb5-9604-5487049c2cff1691142886405-image_png356438875.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/5a8540d5-9bd0-4a5b-81ee-063f8f23cf1c1691142814463-image_png1048777875.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/30ce6d77-d4f5-4bed-b89a-c9cf00d197b81691142723203-image_png2141362199.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/26abfeae-7980-4263-aac2-2e6206035da81691142704308-image_png_391142713.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/6366f7f4-3942-4cbc-af0d-3b63c0f9add71691142685532-image_png45885503.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/ca44e488-c06b-48ce-814f-3a1e3e66e08b1691142548139-image_png_840304476.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/7abcde7c-18e5-44c5-9cd9-c1490daa842a1691142533559-image_png2078004791.png" alt="Brand"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <!-- ================= PROMO BANNER ================= -->
+    <section class="banner reveal">
+        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg" alt="Promo">
+    </section>
+
+    <!-- ================= GRAND GLOBAL BRANDS ================= -->
+    <section class="brandsection reveal">
+        <h2>GRAND GLOBAL BRANDS</h2>
+    </section>
+
+    <section class="brand-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/81bcb28d-55f3-4d7b-bb5a-7cf7ee7fd8031690773011370-The_Collective.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/7aac1f32-1a1a-4ba6-924b-ee1c28553aed1690773011304-Nautica.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/437645a4-988c-4f53-aff3-b1fdb34938481690773011106-FCUK.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/0c399e2c-9797-483d-bf6c-0852d5d21db21690773010989-BHPC.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/044555a5-9987-4a06-8679-8aeb2dd963f91690773011013-boohooMan.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/2/805eeb23-ec17-4b50-b798-1244133c02041690955797245-image_png_1993656242.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/92d5e2ec-a736-4bfd-832b-6972121829c91690773010945-Aldo.png" alt="Brand"></div>
+            <div class="swiper-slide branditems"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/331d0d67-95de-4e58-b774-add891464af01690773011037-Calvin_Klein.png" alt="Brand"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </section>
+
+    <!-- ================= SHOP BY CATEGORY ================= -->
+    <section class="brandsection reveal">
+        <h2>SHOP BY CATEGORY</h2>
+    </section>
+
+    <section class="category-grid reveal">
+        <div class="category-item">
+            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/0dedd7c2-6c01-4ab0-a907-8928e56066d41690787339184-Shop-By-Category_HP-4_02.jpg" alt="Category">
+        </div>
+        <div class="category-item">
+            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/bfab4827-0ea6-4a5b-8b8d-167d497ae78e1690787339167-Shop-By-Category_HP-4_03.jpg" alt="Category">
+        </div>
+        <div class="category-item">
+            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/c61cfcfb-749f-4d8e-a318-0ea8f8705a1c1690787339442-Shop-By-Category_HP-4_04.jpg" alt="Category">
+        </div>
+        <div class="category-item">
+            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/a50c2dec-c5bc-46f3-b754-294fb46c61971690787339077-Shop-By-Category_HP-4_05.jpg" alt="Category">
+        </div>
+        <div class="category-item">
+            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/da4059bf-14f1-4928-b5b9-be8719887b8e1690787339149-Shop-By-Category_HP-4_06.jpg" alt="Category">
+        </div>
+        <div class="category-item">
+            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/3a804edc-ce57-4eb5-bb6a-493d458973661690787338896-Shop-By-Category_HP-4_07.jpg" alt="Category">
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>ONLINE SHOPPING</h4>
+                <ul>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Genz</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Myntra Insider</a></li>
+                </ul>
+
+                <h4>USEFUL LINKS</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                    <li><a href="#">Whitehat</a></li>
+                    <li><a href="#">Cleartrip</a></li>
+                    <li><a href="#">Myntra Global</a></li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="offerdelas">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2026/APRIL/20/J3KzCYBb_c5fd536b78724f8e92960758286ac814.jpg" alt="image not found" height="200px" width="100%">
-    </div>
-    <div class="banner">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/4/17/eb6408d8-b413-49f7-8525-317fddba53821650180659351-Casual---Sports-Shoes_Desk.jpg" alt="image not found" height="400px" width="100%">
-    </div>
-    <div class="brandsection">
-        <h2>BIGGEST DEALS ON TOP BRANDS</h2>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/4/71a69cc9-210a-4a95-b37f-78319c8f33761691141606256-image_png2064277310.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/ccebd3fc-3628-4eb5-9604-5487049c2cff1691142886405-image_png356438875.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/5a8540d5-9bd0-4a5b-81ee-063f8f23cf1c1691142814463-image_png1048777875.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/30ce6d77-d4f5-4bed-b89a-c9cf00d197b81691142723203-image_png2141362199.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/26abfeae-7980-4263-aac2-2e6206035da81691142704308-image_png_391142713.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/6366f7f4-3942-4cbc-af0d-3b63c0f9add71691142685532-image_png45885503.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/ca44e488-c06b-48ce-814f-3a1e3e66e08b1691142548139-image_png_840304476.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/7abcde7c-18e5-44c5-9cd9-c1490daa842a1691142533559-image_png2078004791.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/6ddcd2e5-20c6-4672-9b02-7d2117550f641691142512854-image_png242033865.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/b504644b-f446-48c9-b928-36f1958bd19a1691142484406-image_png_292913761.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/4/921e38ac-f903-4701-a419-df42b9448ef51691142513445-image_png1803300271.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/4/944486f4-8cf8-456e-a0d5-c2655bf1deaa1691131597834-image_png_1935947130.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/29/00e27983-d373-4d86-9f25-3e46a18ec12a1690609817622-Top_casual_Styles-_Levi-s-_Tommy_Min_40.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/4/dc79e7c8-af20-4b65-ae2f-da2ca8e8c3f31691134139774-image_png1749927309.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/8/3/a06120fd-caa3-4dac-93c3-3d4d574f8d7c1691087170219-image_png_116457033.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/2ccbd34a-3340-4b55-bd4e-2ac182e425c11691079149976-image_png_1139490265.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/eb385972-caf6-4e84-a37c-3fc2b4ac52041691079093062-image_png892897249.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/3a834277-7c69-4e28-b50d-79a1a50fb4e81691079063461-image_png_762128704--1-.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/51084b8a-9c9e-4b03-bc4a-dfd7738590eb1691076143197-image_png949061620--1-.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/a9734bdc-8054-4806-8ab4-748d7dfdfe411691066316796-unnamed---2023-08-03T180830.165.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/bf39dcbb-1a94-481c-b943-43fca34bf0581691066296958-unnamed---2023-08-03T180811.304.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/8027069a-3a10-4a92-a228-1c4e24cd58071691066276841-unnamed---2023-08-03T180720.906.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/d6529cc8-ff03-4d85-88b7-5358a1d5a46b1691057399814-image_png1830835492.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/3/4cde4706-089f-4049-9d9c-116d8631af381691056679844-image_png1175979315.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="banner">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/179e278f-77ee-44c2-bf39-9f00b0cd08e01658752429301-Handbags_Desk.jpg" alt="image not found" height="400px" width="100%">
-    </div>
-    <div class="ggbsection">
-            <div class="brandsection">
-                <h2>GRAND GLOBAL BRANDS</h2>
+
+            <div class="footer-col">
+                <h4>CUSTOMER POLICIES</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">T&C</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Grievance Redressal</a></li>
+                    <li><a href="#">FSSAI Food Safety</a></li>
+                    <li><a href="#">Connect App</a></li>
+                </ul>
             </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/81bcb28d-55f3-4d7b-bb5a-7cf7ee7fd8031690773011370-The_Collective.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/7aac1f32-1a1a-4ba6-924b-ee1c28553aed1690773011304-Nautica.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/437645a4-988c-4f53-aff3-b1fdb34938481690773011106-FCUK.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/0c399e2c-9797-483d-bf6c-0852d5d21db21690773010989-BHPC.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/044555a5-9987-4a06-8679-8aeb2dd963f91690773011013-boohooMan.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/2/805eeb23-ec17-4b50-b798-1244133c02041690955797245-image_png_1993656242.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_lihttps://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/6b6c7162-0086-4967-90c8-ec4792ec200c1690773011082-Dorothy_Perkin-_Boohoo.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/8/2/9699db4e-8162-406a-85ba-e92116f0019f1690955825591-image_png2047004151.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/92d5e2ec-a736-4bfd-832b-6972121829c91690773010945-Aldo.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/331d0d67-95de-4e58-b774-add891464af01690773011037-Calvin_Klein.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/d400d2ce-5755-4c86-96b8-26899aea6ea61690773011130-GANT.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/d521c019-8fcd-4f36-a56f-7a1b9095e2661690773010958-Antony_Morato.png" alt="image not found:">
-        </div>
-    </div>
-     <div class="banner">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg" alt="image not found" height="400px" width="100%">
-    </div>
-    <div class="ggbsection">
-            <div class="brandsection">
-                <h2>RISING STARS</h2>
-            </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/925ace95-64e1-4692-92c0-826bde3f838b1743664826626-image_png2008444094.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/08fed317-13c3-4fca-925f-4e3f904adf6e1743664846782-image_png_345798654.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/edb347da-f35b-4d68-91d7-e3b0abba39f01743664908755-cf0de057-98b8-4d14-968d-8b35878100db.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/9ca117d1-1c90-4217-8615-f5d9a66245251743664924386-image_png676529993.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/62628ecd-af1d-4b81-8a82-302520ade5061743664952778-image_png_1238714099.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/62d92229-2d9d-4cc6-933f-1facd190248c1743664969307-image_png_1434304747.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/b3b8e1d5-0b7f-4ac2-988a-e1a2a4b71ef51743664985845-image_png747386139.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/6d3a4cec-35ee-4002-b8c9-115b7979eb4e1743665003385-image_png225290513.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/a478f3f4-b261-4d42-8b41-ba8e38eed7491743665021245-3d887b9c-1741-4f13-928f-4e052f5b4858.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/e227f4c1-b6c6-4abc-bfcf-4693266d102a1743665039878-image_png_1046077641.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/b17e2c3a-6827-4232-b2c7-1c7a3ed0b9ba1743665081294-image_png2131570976.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/bb80e70c-df47-45e1-a5fa-770846769a7d1743665099089-image_png_852971279.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/f1c6e58a-b514-4081-9c10-096dde097ac91743665116601-image_png_1886899461.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/bc244f6b-ec59-4e0a-affb-84a062bdb5e11743665134126-image_png69923319.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2025/4/3/3b8762c2-8c67-46ff-8a4e-f8d0bf6c38121743665152429-image_png282063139.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="banner">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2025/AUGUST/25/0pfZkpSF_60a17fdbda0a4622b8bd1f79585836c0.png" alt="image not found" height="400px" width="100%">
-    </div>
-    <div class="ggbsection">
-            <div class="brandsection">
-                <h2>LUX GRAND REDUCTION DEALS</h2>
-            </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/vEWFYOye_14f4f7547ecb4c079855f8301128df46.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/yeoUJy1S_4e79c54bdd174052a9abcfac1d2a8bbd.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/wFPkZ6H1_c9bb52d0824d4edcb2dbec7fe2f800d0.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/RYMYFMOO_ab6eb526601841019b9acd933df1bed6.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/8nY49yv6_2ac65b37e50645728658d8d7a75a5fd1.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/aRBN2tk4_964c12c29366441ab74f35f4efdf9591.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/tRX72V2a_47fba08feddc4ad8b9ad5c8dc04c45b3.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/OJvOUlQW_415a6f82c0ff4c38a3b650c734d3b52e.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/yrJ9o15l_06f85e217b104701aec6ce93c28e46fa.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/rTLGu6Uh_a7a63c3327d343a79a56f3a58eee52e3.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/of67fd3n_dcd2889a4a414ff9ab60ab881934b6ad.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/b1M22Uns_fddc69ba45484eeda68f58756b71037e.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="brandrow">
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/oCWlb7u4_17a5608b5a6d410da830b519b57da3b6.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/r8nIwSKg_d9437733c64b42a49122dbcd98885706.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/qOsCixJM_9e023a3fbfcc48f78367ba593e64b8cb.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/12VHHmXG_5dc5e78601174f9087339eaa7723cc43.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/MSX3QTMF_73993eeee48c472fa4f5c69b3696a0ca.png" alt="image not found:">
-        </div>
-        <div class="branditems">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2025/JANUARY/10/G8tg5Sl2_70a3ffda53da4adbbfbe6cad2b0a418b.png" alt="image not found:">
-        </div>
-    </div>
-    <div class="banner">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/31/4031994d-9092-4aa7-aea1-f52f2ae5194f1654006594976-Activewear_DK.jpg" alt="image not found" height="400px" width="100%">
-    </div>
-    <div class="offerdelas">
-        <img src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2026/APRIL/20/J3KzCYBb_c5fd536b78724f8e92960758286ac814.jpg" alt="image not found" height="200px" width="100%">
-    </div>
-    <div class="ggbsection">
-            <div class="brandsection">
-                <h2>SHOP BY CATEGORY</h2>
-            </div>
-    </div>
-    <div class="sbcsection">
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/0dedd7c2-6c01-4ab0-a907-8928e56066d41690787339184-Shop-By-Category_HP-4_02.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/bfab4827-0ea6-4a5b-8b8d-167d497ae78e1690787339167-Shop-By-Category_HP-4_03.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/c61cfcfb-749f-4d8e-a318-0ea8f8705a1c1690787339442-Shop-By-Category_HP-4_04.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/a50c2dec-c5bc-46f3-b754-294fb46c61971690787339077-Shop-By-Category_HP-4_05.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/da4059bf-14f1-4928-b5b9-be8719887b8e1690787339149-Shop-By-Category_HP-4_06.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/3a804edc-ce57-4eb5-bb6a-493d458973661690787338896-Shop-By-Category_HP-4_07.jpg" alt="image not found:">
-        </div>
-    </div>
-    <div class="sbcsection">
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/84870fc6-4805-41a4-b9eb-a8d7adb6c0d21690787339128-Shop-By-Category_HP-4_08.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/069d06bc-1b75-43f4-b8d1-1ec46193eb021690787339028-Shop-By-Category_HP-4_09.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/19755254-9c13-40a3-9cab-2bb9714391ab1690787339274-Shop-By-Category_HP-4_10.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/dd262b36-3a75-464a-97b5-235984080d851690787338916-Shop-By-Category_HP-4_11.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/d26e5ed5-d846-4692-88a5-54ab7d79203b1690787339203-Shop-By-Category_HP-4_12.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/dd3d6118-cd57-4e73-a4a4-e7f8a6bfde7b1690787339093-Shop-By-Category_HP-4_13.jpg" alt="image not found:">
-        </div>
-    </div>
-    <div class="sbcsection">
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/babe0d1a-b7fe-4b36-8a98-b275523963721690787339222-Shop-By-Category_HP-4_14.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/3c2095db-905a-4346-9712-2fac7bcbbbd71690787339011-Shop-By-Category_HP-4_15.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/c1c8027f-1a22-4a0b-8be2-848edab298cf1690787339044-Shop-By-Category_HP-4_16.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/278917b5-1658-4c2c-b122-f623b1d909701690787339290-Shop-By-Category_HP-4_17.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/6c53770e-b7b2-466a-b36e-a0b2bff1a7591690787339109-Shop-By-Category_HP-4_18.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/54852b61-90d6-484a-84c9-a8560247ffc21690787339307-Shop-By-Category_HP-4_19.jpg" alt="image not found:">
-        </div>
-    </div>
-    <div class="sbcsection">
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/5d78afb6-38bb-43bd-bc67-1e4f6026b6ae1690787339327-Shop-By-Category_HP-4_20.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/90dcb992-9fb4-4208-8249-aa1a01b2851d1690787339476-Shop-By-Category_HP-4_21.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/e4fcb9f0-f79a-41b7-b7b2-8828bb6e95e61690787339426-Shop-By-Category_HP-4_22.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/66882f76-0bbe-4741-8890-0426695e09131690787339238-Shop-By-Category_HP-4_23.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/6aa501b3-ce05-48f5-96fe-ecb64682dbc71690787339409-Shop-By-Category_HP-4_24.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/b6e15609-4f52-44db-80c1-2a955fd4ac6e1690787339341-Shop-By-Category_HP-4_25.jpg" alt="image not found:">
-        </div>
-    </div>
-    <div class="sbcsection">
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/7916724b-be74-4920-b58d-ada0617cdee91690787339392-Shop-By-Category_HP-4_26.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/5c541739-5c23-4846-a875-f19a170cea151690787339460-Shop-By-Category_HP-4_27.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/76932333-b792-4f54-983c-45aaf70e04ef1690787338936-Shop-By-Category_HP-4_28.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/a351ad62-c1d1-4bb4-9967-d3966f8446521690787338974-Shop-By-Category_HP-4_29.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/130ceab4-ac68-42c5-a9f4-478ba7f903db1690787339061-Shop-By-Category_HP-4_30.jpg" alt="image not found:">
-        </div>
-        <div class="offeritemas">
-            <img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/cda4c195-22c1-4e11-a9dc-4728d69c3f2b1690787338956-Shop-By-Category_HP-4_31.jpg" alt="image not found:">
-        </div>
-    </div>
-    <div class="sbc">
-        <div class="lastofferitemas">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/89e0a0ee-225d-4880-a761-6aa895d252871690787338993-Shop-By-Category_HP-4_33.jpg" alt="image not found:">
-        </div>
-        <div class="lastofferitemas">
-            <img src="https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/82cdf918-9ad9-41fa-a5a7-c4c86fbad90c1690787338876-Shop-By-Category_HP-4_34.jpg" alt="image not found:">
-        </div>
-        <div class="lastofferitemas">
-            <img src="https://assets.myntassets.com/w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2023/7/31/ed2e98bc-e4f4-4e85-bc74-537142205d0f1690787339374-Shop-By-Category_HP-4_35.jpg" alt="image not found:">
-        </div>
-    </div>
-    <footer>
-    <div class="footer-container">
 
-        <div class="footer-col">
-            <h4>ONLINE SHOPPING</h4>
-            <ul>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">home</a></li>
-                <li><a href="#">beauty</a></li>
-                <li><a href="#">genz</a></li>
-                <li><a href="#">Gift cards</a></li>
-                <li><a href="#">myntra insider</a></li>
-            </ul>
+            <div class="footer-col app-col">
+                <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+                <div class="app-store-buttons">
+                    <a href="#"><img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="Google Play"></a>
+                    <a href="#"><img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="App Store"></a>
+                </div>
 
-            <h4>useful links</h4>
-            <ul>
-                <li><a href="#">blog</a></li>
-                <li><a href="#">careers</a></li>
-                <li><a href="#">site map</a></li>
-                <li><a href="#">corporate information</a></li>
-                <li><a href="#">whitehat</a></li>
-                <li><a href="#">cleartrip</a></li>
-                <li><a href="#">myntra global</a></li>
-            </ul>
-        </div>
-
-
-        <div class="footer-col">
-            <h4>CUSTOMER POLICIES</h4>
-            <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">T&C</a></li>
-                <li><a href="#">terms of use</a></li>
-                <li><a href="#">track orders</a></li>
-                <li><a href="#">shipping</a></li>
-                <li><a href="#">privacy policy</a></li>
-                <li><a href="#">grievance redressal</a></li>
-                <li><a href="#">FSSAI food safety</a></li>
-                <li><a href="#">connect app</a></li>
-            </ul>
-        </div>
-
-        <div class="app-store-buttons">
-            <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
-                <a><img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="no image generated" style="width: 120px; height: 40px;"></a>
-                <a><img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="no image generated" style="width: 120px; height: 40px;"></a>
-
+                <h4>KEEP IN TOUCH</h4>
                 <div class="social-icons">
-                    <h4>KEEP IN TOUCH</h4>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
-                    <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
                 </div>
             </div>
-                
-            <div class="footer-col">
-                <ul>
-                <li><img src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" alt="" style="width: 48px; height: 40px;">
-                <strong>100% ORIGINAL</strong> guarantee for all products at myntra.com</li>
-                </li>
 
-                <li><img src="https://assets.myntassets.com/assets/images/retaillabs/2023/5/22/becb1b16-86cc-4e78-bdc7-7801c17947831684737106127-Return-Window-image.png" alt="" style="width: 48px; height: 40px;">
-                <strong>Return Within 14Days</strong>of receiving your order</li>
-                </li>
-            </ul>
+            <div class="footer-col guarantee-col">
+                <ul>
+                    <li>
+                        <img src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" alt="Original">
+                        <p><strong>100% ORIGINAL</strong> guarantee for all products at myntra.com</p>
+                    </li>
+                    <li>
+                        <img src="https://assets.myntassets.com/assets/images/retaillabs/2023/5/22/becb1b16-86cc-4e78-bdc7-7801c17947831684737106127-Return-Window-image.png" alt="Return">
+                        <p><strong>Return Within 14 Days</strong> of receiving your order</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="popular-searches">
+            <h4>POPULAR SEARCHES</h4>
+            <p>
+                <a href="#">Makeup</a> | <a href="#">Dresses For Girls</a> | <a href="#">T-Shirts</a> | <a href="#">Sandals</a> | <a href="#">Headphones</a> | <a href="#">Babydolls</a> | <a href="#">Blazers For Men</a> | <a href="#">Handbags</a> | <a href="#">Ladies Watches</a> | <a href="#">Bags</a> | <a href="#">Sport Shoes</a> | <a href="#">Reebok Shoes</a> | <a href="#">Puma Shoes</a> |
+                <a href="#">Boxers</a> | <a href="#">Wallets</a> | <a href="#">Tops</a> | <a href="#">Earrings</a> | <a href="#">Fastrack Watches</a> | <a href="#">Kurtis</a> | <a href="#">Nike</a> | <a href="#">Smart Watches</a> | <a href="#">Titan Watches</a> | <a href="#">Designer Blouse</a> | <a href="#">Gowns</a> | <a href="#">Rings</a> | <a href="#">Cricket Shoes</a> |
+                <a href="#">Forever 21</a> | <a href="#">Eye Makeup</a> | <a href="#">Photo Frames</a> | <a href="#">Punjabi Suits</a> | <a href="#">Bikini</a> | <a href="#">Myntra Fashion Show</a> |
+                <a href="#">Lipstick</a> | <a href="#">Saree</a> | <a href="#">Watches</a> | <a href="#">Dresses</a> | <a href="#">Lehenga</a> | <a href="#">Nike Shoes</a> |
+                <a href="#">Goggles</a> | <a href="#">Bras</a> | <a href="#">Suit</a> | <a href="#">Chinos</a> | <a href="#">Shoes</a> | <a href="#">Adidas Shoes</a> |
+                <a href="#">Woodland Shoes</a> | <a href="#">Jewellery</a> | <a href="#">Designers Sarees</a>
+            </p>
+        </div>
+
+        <div class="copyright-bar">
+            <p>In case of any concern, <a href="#">Contact Us</a></p>
+            <span>© 2025 Myntra. All rights reserved.</span>
+            <span>A Flipkart company</span>
+        </div>
+
+        <div class="borderu"></div>
+
+        <div class="registered-col">
+            <div class="leftpart">
+                <h4>Registered Office Address</h4>
+                <p>Buildings Alyssa, Begonia and Clover situated in Embassy Tech Village, Outer Ring Road, Devarabeesanahalli Village, Varthur Hobli, Bengaluru – 560103, India</p>
+            </div>
+            <div class="rightpart">
+                <h4>CIN : U72300KA2007PTC041799</h4>
+                <p>Telephone: <a href="tel:080-40011450">080-40011450</a></p>
+            </div>
+        </div>
+
+        <div class="borderu"></div>
+
+        <div class="box3">
+            <h4>ONLINE SHOPPING MADE EASY AT MYNTRA</h4>
+            <p>If you would like to experience the best of online shopping for men, women and kids in India, you are at the right place. Myntra is the ultimate destination for fashion and lifestyle, being host to a wide array of merchandise including clothing, footwear, accessories, jewellery, personal care products and more.</p>
         </div>
     </footer>
 
-        <div class="popular-searches">
-             <h4>POPULAR SEARCHES</h4>
-            <p>
-                <a href="#">Makeup</a> | <a href="#">dresses for girls</a> | <a href="#">T-shirts </a> | <a href="#">Sandals</a> | <a href="#">Headphones</a> | <a href="#">babydolls</a> | <a href="#">Blazers for men</a> | <a href="#">handbags</a> | <a href="#">ladies watches</a> | <a href="#">bags</a> | <a href="#">Sport shoes</a> | <a href="#">reebok shoes</a> | <a href="#">puma shoes</a> |
-                <a href="#">boxers</a> | <a href="#">wallets</a> | <a href="#">tops </a> | <a href="#">earrings</a> | <a href="#">fastrack watches</a> | <a href="#">kurtis</a> | <a href="#">nike</a> | <a href="#">smart watches</a> | <a href="#">titan watches</a> | <a href="#">designer blouse</a> | <a href="#">gowns</a> | <a href="#">rings</a> | <a href="#">cricket shoes</a> |
-                <a href="#">forever 21</a> | <a href="#">eye makeup</a> | <a href="#">photo frames</a> | <a href="#">punjabi suits</a> | <a href="#">bikini</a> | <a href="#">myntra fashion show</a> |
-                <a href="#">lipstick</a> | <a href="#">saree</a> | <a href="#">watches</a> | <a href="#">dresses</a> | <a href="#">lehenga</a> | <a href="#">nike shoes</a> |
-                <a href="#">goggles</a> | <a href="#">bras</a> | <a href="#">suit</a> | <a href="#">chinos</a> | <a href="#">shoes</a> | <a href="#">adidas shoes</a> |
-                <a href="#">woodland shoes</a> | <a href="#">jewellery</a> | <a href="#">designers sarees</a>
-            </p>
+    <!-- ================= WISHLIST DRAWER ================= -->
+    <aside class="wishlist-drawer" id="wishlistDrawer">
+        <div class="drawer-header">
+            <h3>My Wishlist</h3>
+            <button id="closeWishlist" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <div class="copyright-bar">
-            <p>In case of any concern, <a href="#">Contact Us</a></p>
-            <span>© 2023 Myntra. All rights reserved.</span>
-            <span>A Flipkart company</span>
-        </div>
-    </div>
-    <div class="borderu"></div>
-    <div class="Registered-col">
-        <div class="leftpart">
-            <h4>Registered Office Address</h4>
-            <ul><li>
-                Buildings Alyssa,
-                    Begonia and Clover situated in Embassy Tech Village,
-                    Outer Ring Road,
-                    Devarabeesanahalli Village,
-                    Varthur Hobli,
-                    Bengaluru – 560103, India
-            </li></ul>
-        </div>
-        <div class="rightpart">
-            <h4>CIN : U72300KA2007PTC041799</h4>
-            <ul><li>
-                Telephone: 080-40011450
-            </li></ul>
-        </div>
-    </div>
-    <div class="borderu"></div>
-    <div class="box3">
-        <h4>ONLINE SHOPPING MADE EASY AT MYNTRA</h4>
-        <p>If you would like to experience the best of online shopping for men, women and kids in India, you are at the right place. Myntra is the ultimate destination for fashion and lifestyle, being host to a wide array of merchandise including clothing, footwear, accessories, jewellery, personal care products and more. It is time to redefine your style statement with our treasure-trove of trendy items. Our online store brings you the latest in designer products straight out of fashion houses. You can shop online at Myntra from the comfort of your home and get your favourites delivered right to your doorstep.</p>
-        <h4>BEST ONLINE SHOPPING SITE IN INDIA FOR FASHION</h4>
-        <p>Be it clothing, footwear or accessories, Myntra offers you the ideal combination of fashion and functionality for men, women and kids. You will realise that the sky is the limit when it comes to the types of outfits that you can purchase for different occasions.</p>
-        
-        <div class="box3p1">1.<strong>smart men's clothing:</strong><p style="margin-top: 10px;"> Myntra you will find myriad options in smart formal shirts and trousers, cool T-shirts and jeans, or kurta and pyjama combinations for men. Wear your attitude with printed T-shirts. Create the back-to-campus vibe with varsity T-shirts and distressed jeans. Be it gingham, buffalo, or window-pane style, checked shirts are unbeatably smart. Team them up with chinos, cuffed jeans or cropped trousers for a smart casual look. Opt for a stylish layered look with biker jackets. Head out in cloudy weather with courage in water-resistant jackets. Browse through our innerwear section to find supportive garments which would keep you confident in any outfit.</p></div>
+        <div class="drawer-body" id="wishlistDrawerBody"></div>
+    </aside>
 
-        <div class="box3p1">2.<strong>Trendy women’s clothing:</strong><p style="margin-top: 10px;"> Online shopping for women at Myntra is a mood-elevating experience. Look hip and stay comfortable with chinos and printed shorts this summer. Look hot on your date dressed in a little black dress, or opt for red dresses for a sassy vibe. Striped dresses and T-shirts represent the classic spirit of nautical fashion. Choose your favourites from among Bardot, off-shoulder, shirt-style, blouson, embroidered and peplum tops, to name a few. Team them up with skinny-fit jeans, skirts or palazzos. Kurtis and jeans make the perfect fusion-wear combination for the cool urbanite. Our grand sarees and lehenga-choli selections are perfect to make an impression at big social events such as weddings. Our salwar-kameez sets, kurtas and Patiala suits make comfortable options for regular wear.</p></div>
+    <!-- ================= TOAST ================= -->
+    <div class="toast" id="toast"></div>
 
-        <div class="box3p1">3.<strong>Fashionable footwear:</strong><p style="margin-top: 10px;"> While clothes maketh the man, the type of footwear you wear reflects your personality. We bring you an exhaustive lineup of options in casual shoes for men, such as sneakers and loafers. Make a power statement at work dressed in brogues and oxfords. Practice for your marathon with running shoes for men and women. Choose shoes for individual games such as tennis, football, basketball, and the like. Or step into the casual style and comfort offered by sandals, sliders, and flip-flops. Explore our lineup of fashionable footwear for ladies, including pumps, heeled boots, wedge-heels, and pencil-heels. Or enjoy the best of comfort and style with embellished and metallic flats.</p></div>
+    <!-- ================= BACK TO TOP ================= -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-        <div class="box3p1">4.<strong>Stylish accessories:</strong><p style="margin-top: 10px;"> Myntra is one of the best online shopping sites for classy accessories that perfectly complement your outfits. You can select smart analogue or digital watches and match them up with belts and ties. Pick up spacious bags, backpacks, and wallets to store your essentials in style. Whether you prefer minimal jewellery or grand and sparkling pieces, our online jewellery collection offers you many impressive options.</p></div>
-
-        <div class="box3p1">5.<strong>Fun and frolic:</strong><p style="margin-top: 10px;"> Online shopping for kids at Myntra is a complete joy. Your little princess is going to love the wide variety of pretty dresses, ballerina shoes, headbands and clips. Delight your son by picking up sports shoes, superhero T-shirts, football jerseys and much more from our online store. Check out our lineup of toys with which you can create memories to cherish.</p></div>
-
-        <div class="box3p1">6.<strong>Beauty begins here :</strong><p style="margin-top: 10px;">You can also refresh, rejuvenate and reveal beautiful skin with personal care, beauty and grooming products from Myntra. Our soaps, shower gels, skin care creams, lotions and other ayurvedic products are specially formulated to reduce the effect of aging and offer the ideal cleansing experience. Keep your scalp clean and your hair uber-stylish with shampoos and hair care products. Choose makeup to enhance your natural beauty.</p></div>
-
-        <div class="box3p1"><p style="margin-top: 10px;">Myntra is one of the best online shopping sites in India which could help transform your living spaces completely. Add colour and personality to your bedrooms with bed linen and curtains. Use smart tableware to impress your guest. Wall decor, clocks, photo frames and artificial plants are sure to breathe life into any corner of your home.</p></div>
-
-        <div class="box3">
-            <h4>AFFORDABLE FASHION AT YOUR FINGERTIPS</h4>
-            <p>Myntra is one of the unique online shopping sites in India where fashion is accessible to all. Check out our new arrivals to view the latest designer clothing, footwear and accessories in the market. You can get your hands on the trendiest style every season in western wear. You can also avail the best of ethnic fashion during all Indian festive occasions. You are sure to be impressed with our seasonal discounts on footwear, trousers, shirts, backpacks and more. The end-of-season sale is the ultimate experience when fashion gets unbelievably affordable.</p>
-        </div>
-        <div class="box3">
-            <h4>MYNTRA INSIDER</h4>
-            <p>Every online shopping experience is precious. Hence, a cashless reward-based customer loyalty program called Myntra Insider was introduced to enhance your online experience. The program is applicable to every registered customer and measures rewards in the form of Insider Points.</p>
-        </div>
-        <div class="box3" style="margin: auto; margin-top: 15px;">
-            <p> are four levels to achieve in the program, as the Insider Points accumulate. They are - Insider, Select, Elite or Icon. Apart from offering discounts on Myntra and partner platform coupons, each tier comes with its own special perks.</p>
-        </div>
-        <div class="box3p1"><strong>Insider</strong><ul>
-            <li class="uli1">Opportunity to master any domain in fashion with tips from celebrity stylists at Myntra Masterclass sessions.</li>
-            <li class="uli1">Curated collections from celeb stylists.</li>
-        </ul>
-        </div>
-
-        <div class="box3p1"><strong>Elite</strong><ul>
-            <li class="uli1">VIP access to special sale events such as the End of Reason Sale (EORS) and product launches.</li>
-            <li class="uli1">Exclusive early access to Limited Edition products</li>
-        </ul>
-        </div>
-
-        <div class="box3p1"><strong>Icon</strong><ul>
-            <li class="uli1">Chance to get on guest lists for special events.</li>
-        </ul>
-        </div>
-
-         <div class="box3">
-            <h4>Myntra Studio - The Personalised Fashion Feed You Wouldn’t Want To Miss Out On</h4>
-            <p>The world wide web is evolving at a relentless pace, and with an accelerated growth each passing year, there is bound to be an overwhelming surge of online content. It was for this very reason that personalisation of search feeds was proposed as a solution to combat the overload of irrelevant information.</p>
-           <div class="uli2">
-            <p>Several social media platforms such as Facebook and Instagram along with various online shopping websites have chosen to help filter content, increasing user engagement, retention and customer loyalty.</p>
-           </div>
-           <div class="uli2">
-            <p>Myntra is one such online shopping website that joins the list of platforms that help curate a personalised fashion feed. Named theMyntra Studio, this personalised search feed brings you the latest men and women’s fashion trends, celebrity styles, branded content and daily updates from your favourite fashion labels.</p>
-           </div>
-           <div class="uli2">
-            <p>If you are wondering how impactful Myntra Studio can be, we are listing out five perks of having a rich, meaningful, and personalised fashion feed in your life.</p>
-
-            <div class="box3p1">1.<strong>Keep Up With What Your Favourite Fashion Icons Are Upto:</strong><p style="margin-top: 10px;">The #OOTD, AKA outfit of the day hashtag trend has been a rage among fashion bloggers and stylists. The whole concept of building an outfit from scratch and showcasing it to a huge community of enthusiasts using the hashtag has helped individuals with understanding trends and making suitable for daily wear.</p>
-                <p style="margin-top: 27px;">Imagine if you could keep up with every piece of clothing and accessory worn by the fashion icons you look upto. From Sonam Kapoor to Hailey Baldwin Bieber, Myntra Studio has a ‘Stories’ feature to help track celebrity fashion trends, exploring details such as their outfit of the day. This way, you would not ever miss out on the latest celebrity fashion trends, from all around the world.</p>
-            </div>
-             <div class="box3p1">2.<strong>Quick Fashion Tip And Tricks:</strong><p style="margin-top: 10px;">Whether it is draping a saree into a dhoti style, wearing the right lingerie under certain dresses or discovering multiple uses out of heavy ethnic wear, Myntra Studio will help you acquire some unique and useful fashion hacks. Each hack is designed with the intention to help you get the best wear out of everything in your wardrobe.</p>
-           </div>
-            <div class="box3p1">3.<strong>Updates on What Is Trending and New Product Launches:</strong><p style="margin-top: 10px;">Since fast fashion seems to be extremely hard to keep up with these days, a quick update on what is trending in accessories, clothing and footwear would certainly be of great help. Myntra Studio helps you stay connected to the most beloved and sought after brands such as Puma, Coverstory, The Label Life and so many more.</p>
-            <p style="margin-top: 25px;">Your feed keeps you updated with stories of what the brands are creating including clothing, footwear and jewellery, along with their new seasonal collections.</p>
-           </div>
-            <div class="box3p1">4.<strong>Explicit Step-By-Step Beauty Routines From Experts:</strong><p style="margin-top: 10px;">Just like fashion, the beauty community keeps on growing, and with brands such as Huda Beauty, MAC and the latest Kay Beauty by Katrina Kaif, are constantly coming up with mind-blowing products. Whether it is creating a no-makeup look, different winged eyeliners, do-it-yourself facial masks and other personal care beauty routines, Myntra Studio is here for you.</p>
-           </div>
-            <div class="box3p1">5.<strong>Celebrity Confessions And A Look Into Their Lives:</strong><p style="margin-top: 10px;">A bonus feature that Myntra Studio has in store for you is celebrity confessions and a peek into their lives. So, Myntra helps you stay connected to your most beloved celebrities in a matter of clicks.</p>
-                <p style="margin-top: 25px;">If you are very particular when it comes to the content you wish to view and engage with on social media, the ability to intricately filter content helps achieve that. Applying the same formula for hardcore fashion lovers and shoppers, Myntra Studio brings you a daily fashion fix incorporating everything that you love, all at one place. Sign up on Myntra today and start organising your fashion feed, just the way you want to.</p>
-           </div>
-        </div>
-        <div class="box3">
-            <h4>MYNTRA APP</h4>
-            <p>Myntra, India’s no. 1 online fashion destination justifies its fashion relevance by bringing something new and chic to the table on the daily. Fashion trends seem to change at lightning speed, yet the Myntra shopping app has managed to keep up without any hiccups. In addition, Myntra has vowed to serve customers to the best of its ability by introducing its first-ever loyalty program, The Myntra Insider. Gain access to priority delivery, early sales, lucrative deals and other special perks on all your shopping with the Myntra app. Download the Myntra app on your Android or IOS device today and experience shopping like never before!</p>
-        </div>
-        <div class="box3">
-            <h4>HISTORY OF MYNTRA</h4>
-            <p>Becoming India’s no. 1 fashion destination is not an easy feat. Sincere efforts, digital enhancements and a team of dedicated personnel with an equally loyal customer base have made Myntra the online platform that it is today. The original B2B venture for personalized gifts was conceived in 2007 but transitioned into a full-fledged ecommerce giant within a span of just a few years. By 2012, Myntra had introduced 350 Indian and international brands to its platform, and this has only grown in number each passing year. Today Myntra sits on top of the online fashion game with an astounding social media following, a loyalty program dedicated to its customers, and tempting, hard-to-say-no-to deals.</p>
-            <p style="margin-top: 25px;">
-                The Myntra shopping app came into existence in the year 2015 to further encourage customers’ shopping sprees. Download the app on your Android or IOS device this very minute to experience fashion like never before
-            </p>
-        </div>
-        <div class="box3">
-            <h4>SHOP ONLINE AT MYNTRA WITH COMPLETE CONVENIENCE</h4>
-            <p>Another reason why Myntra is the best of all online stores is the complete convenience that it offers. You can view your favourite brands with price options for different products in one place. A user-friendly interface will guide you through your selection process. Comprehensive size charts, product information and high-resolution images help you make the best buying decisions. You also have the freedom to choose your payment options, be it card or cash-on-delivery. The 14-day returns policy gives you more power as a buyer. Additionally, the try-and-buy option for select products takes customer-friendliness to the next level.</p>
-            <p style="margin: 25px 30px 40px;" >Enjoy the hassle-free experience as you shop comfortably from your home or your workplace. You can also shop for your friends, family and loved-ones and avail our gift services for special occasions.</p>
-        </div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
