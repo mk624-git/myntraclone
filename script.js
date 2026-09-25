@@ -1,13 +1,7 @@
-/* =========================================================
-   MYNTRA CLONE — SCRIPT (Frontend + Local Backend Simulation)
-   ========================================================= */
-
 (function () {
   "use strict";
 
-  /* =====================================================
-     LOCAL "DATABASE" — localStorage based
-  ===================================================== */
+
   const DB = {
     get(key, fallback) {
       try {
@@ -32,17 +26,13 @@
   let wishlist = DB.get(KEYS.WISHLIST, []);
   let bag = DB.get(KEYS.BAG, []);
 
-  /* =====================================================
-     LOADER
-  ===================================================== */
+
   window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     if (loader) setTimeout(() => loader.classList.add("hidden"), 500);
   });
 
-  /* =====================================================
-     TOAST
-  ===================================================== */
+
   const toastEl = document.getElementById("toast");
   let toastTimer = null;
 
@@ -54,9 +44,7 @@
     toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2200);
   }
 
-  /* =====================================================
-     HEADER SCROLL
-  ===================================================== */
+
   const header = document.getElementById("header");
   const backToTop = document.getElementById("backToTop");
 
@@ -74,9 +62,7 @@
     });
   }
 
-  /* =====================================================
-     MOBILE NAV
-  ===================================================== */
+
   const hamburger = document.getElementById("hamburgerBtn");
   const menu = document.getElementById("mainMenu");
   const backdrop = document.getElementById("navBackdrop");
@@ -99,9 +85,7 @@
     a.addEventListener("click", closeMenu)
   );
 
-  /* =====================================================
-     SEARCH + SUGGESTIONS
-  ===================================================== */
+ 
   const searchInput = document.getElementById("searchInput");
   const searchSuggest = document.getElementById("searchSuggest");
   const searchForm = document.getElementById("searchForm");
@@ -182,9 +166,7 @@
     doSearch(searchInput.value.trim());
   });
 
-  /* =====================================================
-     WISHLIST + BAG
-  ===================================================== */
+
   const wishlistCountEl = document.getElementById("wishlistCount");
   const bagCountEl = document.getElementById("bagCount");
   const wishlistDrawer = document.getElementById("wishlistDrawer");
@@ -291,7 +273,7 @@
     }
   });
 
-  // Restore wishlist heart state on load
+
   wishlist.forEach(item => {
     document.querySelectorAll(`.wish-btn[data-id="${CSS.escape(item.id)}"]`).forEach(b => {
       b.classList.add("active");
@@ -319,9 +301,7 @@
     });
   }
 
-  /* =====================================================
-     SWIPERS
-  ===================================================== */
+
   function initSwipers() {
     if (typeof Swiper === "undefined") return;
 
@@ -355,9 +335,7 @@
     });
   }
 
-  /* =====================================================
-     SCROLL REVEAL
-  ===================================================== */
+
   function initReveal() {
     const targets = document.querySelectorAll(
       ".brandsection, .brand-swiper, .banner, .category-grid, .offerdelas, .sbc"
@@ -383,9 +361,7 @@
     targets.forEach(t => io.observe(t));
   }
 
-  /* =====================================================
-     INIT
-  ===================================================== */
+
   document.addEventListener("DOMContentLoaded", () => {
     initSwipers();
     initReveal();
